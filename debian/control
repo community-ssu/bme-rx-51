@@ -1,0 +1,15 @@
+Source: bme-rx-51
+Section: misc
+Priority: optional
+Maintainer: Pali Rohár <pali.rohar@gmail.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: bme-rx-51
+Architecture: armel
+Depends: kernel-feature-battery, kernel-feature-charger, ${shlibs:Depends}, ${misc:Depends}
+Conflicts: bme, dsme (<< 0.60.12)
+Replaces: bme
+Provides: bme
+Description: Battery Management Entity
+ TODO ...

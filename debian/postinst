@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installupstart
+# update event file
+
+if [ -e /etc/event.replace.d/bme ]; then
+	[ -d /etc/event.d/ ] || mkdir -p /etc/event.d/
+	cp -f /etc/event.replace.d/bme /etc/event.d/bme
+fi
+
+# initctl stop bme --no-wait
+# initctl start bme --no-wait
+
+# End automatically added section
