@@ -11,7 +11,7 @@ clean:
 binary: build
 	dh_testdir
 	dh_testroot
-	dh_prep
+#	dh_prep
 	mkdir -p debian/bme-rx-51/etc/event.replace.d
 	cp debian/event.d debian/bme-rx-51/etc/event.replace.d/bme
 	dh_installdirs
