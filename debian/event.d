@@ -35,16 +35,13 @@ script
 
   if ! modprobe bq2415x_charger ; then
      $LOGGER -pdaemon.crit 'modprobe bq2415x_charger failed'
-     exit 1
   fi
 
   if ! modprobe bq27x00_battery ; then
      $LOGGER -pdaemon.crit 'modprobe bq27x00_battery failed'
-     exit 1
   fi
 
   if ! modprobe rx51_battery ; then
      $LOGGER -pdaemon.crit 'modprobe rx51_battery failed'
-     exit 1
   fi
 end script
