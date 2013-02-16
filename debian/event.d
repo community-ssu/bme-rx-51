@@ -17,11 +17,15 @@ script
           modprobe g_nokia || true
           initctl emit G_NOKIA_READY
         else
-          modprobe g_file_storage luns=2 stall=0 removable || true
+          modprobe g_file_storage luns=2 stall=0 removable || \
+            modprobe g_mass_storage luns=2 stall=0 removable=1,1 || \
+            true
         fi
         ;;
   ACT_DEAD)
-        modprobe g_file_storage luns=2 stall=0 || true
+        modprobe g_file_storage luns=2 stall=0 removable || \
+          modprobe g_mass_storage luns=2 stall=0 removable=1,1 || \
+          true
         ;;
   *)
         $LOGGER -pdaemon.notice 'skip modprobe g_*'
